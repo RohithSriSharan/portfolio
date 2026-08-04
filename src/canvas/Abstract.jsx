@@ -94,7 +94,7 @@ export default function AbstractCanvas() {
 
         {/* glow */}
         <EffectComposer>
-          <Bloom intensity={10} luminanceThreshold={6} />
+          <Bloom intensity={1} luminanceThreshold={6} />
         </EffectComposer>
 
         {/* orbit controls (rotate only) */}
@@ -118,3 +118,14 @@ export default function AbstractCanvas() {
     </Canvas>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
