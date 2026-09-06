@@ -11,48 +11,109 @@ import {
   Terminal, 
   Activity, 
   Cpu, 
-  Zap 
+  Zap,
+  ShoppingCart,
+  Building2,
+  Code2,
+  Laptop,
+ 
+  Wrench,
 } from "lucide-react";
 
-/* --- NO CHANGES TO DATA --- */
 const experience = [
   {
-    title: "Machine Learning Engineer",
-    company: "Xenlogice Technologies Pvt. Ltd.",
-    duration: "2022 — PRESENT",
-    type: "Full-Time",
-    description: "Architecting high-availability predictive ecosystems within AWS native environments. Focusing on financial risk and demand forecasting.",
+    title: "Freelance Full-Stack Developer",
+    company: "Art Evo",
+    duration: "FEB 2026 — JUN 2026",
+    type: "Freelance",
+    description:
+      "Designed and delivered a production e-commerce platform as the sole developer, covering customer workflows, seller operations, payments, and deployment.",
     points: [
-      "Architected Fraud Detection on AWS SageMaker with real-time threat patterns.",
-      "Engineered a Loan Default platform handling large-scale financial datasets.",
-      "Developed Demand Forecasting with automated MLOps retraining pipelines.",
-      "Optimized production infra, reducing latency and cloud overhead by 40%.",
-      "Established enterprise ML best practices for security and scalability."
+      "Built customer workflows for product discovery, cart, wishlist, checkout, and order tracking.",
+      "Implemented Clerk authentication with user-linked profiles, mobile numbers, and address management.",
+      "Developed a seller dashboard for product CRUD, order management, and synchronized status updates.",
+      "Integrated Razorpay payments with webhook-based synchronization of payment and order states.",
+      "Replaced WhatsApp-based updates with live tracking, increasing direct website orders by ~70%.",
+      "Implemented CI/CD with GitHub Actions for automated Vercel deployments."
     ],
-    icon: <Cpu />,
+    icon: <ShoppingCart />,
     color: "bg-indigo-600",
     accent: "text-indigo-400"
   },
+  
+  {
+    title: "Full-Stack Developer",
+    company: "Image Express, Ireland",
+    duration: "JUL 2023 — OCT 2024",
+    type: "Full-Time",
+    description:
+      "Developed and maintained an e-commerce platform for digital photo printing and custom gifts as part of a four-person engineering team.",
+    points: [
+      "Built and integrated 10+ FastAPI endpoints backed by MongoDB.",
+      "Developed product, cart, order, and customer workflows using React and Next.js.",
+      "Delivered reusable UI components, API integrations, and input validation.",
+      "Supported end-to-end workflows covering product discovery, checkout, and order tracking.",
+      "Reduced redundant network requests by ~26% through shared fetching, deduplication, and client-side caching."
+    ],
+    icon: <Code2 />,
+    color: "bg-blue-600",
+    accent: "text-blue-400"
+  },
+  {
+    title: "Software Development Intern",
+    company: "Lince Soft Pvt. Ltd.",
+    duration: "SEP 2019 — DEC 2020",
+    type: "Internship",
+    description:
+      "Contributed to frontend and backend development while building foundational software engineering experience.",
+    points: [
+      "Assisted senior developers with feature implementation and application maintenance.",
+      "Contributed to frontend and backend development tasks.",
+      "Resolved bugs and delivered small-scale application features.",
+      "Participated in code reviews and established development workflows.",
+      "Built a software engineering foundation while transitioning from mechanical engineering."
+    ],
+    icon: <Laptop />,
+    color: "bg-emerald-600",
+    accent: "text-emerald-400"
+  }
 ];
 
 const education = [
   {
-    title: "MSc Computer & Information Science",
-    institution: "Northumbria University London",
-    duration: "2020 — 2022",
-    type: "Post-Graduate",
-    description: "Multidisciplinary focus on the lifecycle of intelligent systems—from theoretical research to global-scale architecture.",
+    title:
+      "MSc Computing and Technology with Advanced Practice",
+    institution: "Northumbria University, London",
+    duration: "2021 — 2023",
+    type: "Postgraduate",
+    description:
+      "Advanced postgraduate study in computing and information science, strengthening software development, system design, and applied technology skills.",
     points: [
-      "Integrated SOTA standards for model reproducibility and ethical AI validation.",
-      "Applied cybersecurity frameworks and data privacy to sensitive AI datasets.",
-      "Architected HLD/LLD for distributed cloud infrastructures using industry patterns.",
-      "Prioritized low-latency performance (<100ms) and 99.9% high-availability.",
-      "Bridged AI innovation with enterprise-grade 'Secure-by-Design' principles."
+      "Developed advanced knowledge of computing and software engineering principles.",
+      "Studied the design and development of modern technology systems.",
+      "Strengthened practical programming, research, and problem-solving skills.",
+      "Built the technical foundation for full-stack development and ML/AI engineering."
     ],
     icon: <GraduationCap />,
     color: "bg-purple-600",
     accent: "text-purple-400"
   },
+  {
+    title: "B.Tech Mechanical Engineering",
+    institution: "CVR College of Engineering, India",
+    duration: "2015 — 2019",
+    type: "Undergraduate",
+    description:
+      "Built a strong engineering foundation in analytical reasoning, quantitative problem-solving, and structured system design.",
+    points: [
+      "Developed a foundation in mathematics, engineering analysis, and problem-solving.",
+      "Applied structured design and analytical methods to engineering problems.",
+      "Began transitioning into programming and software development during the degree."
+    ],
+    icon: <Wrench />,
+    color: "bg-orange-600",
+    accent: "text-orange-400"
+  }
 ];
 
 export default function Edu_Exp() {

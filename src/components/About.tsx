@@ -1,23 +1,35 @@
 
+
 // "use client";
 
 // import React from "react";
 // import Link from "next/link";
-// import { motion } from "framer-motion";
+// import { motion, Variants } from "framer-motion";
 // import {
-//   Linkedin, Github, Terminal, Brain, Cpu, Code2, Server,
-//   Database, Cloud, CalendarClock, FolderKanban, GitBranch,
-//   Rocket, ArrowUpRight, Sparkles, Binary, Activity
+//   Brain, 
+//   CalendarClock, 
+//   FolderKanban, 
+//   GitBranch,
+//   ArrowUpRight, 
+//   Binary, 
+//   Activity
 // } from "lucide-react";
 
-// const containerVariants = {
+// const containerVariants: Variants = {
 //   hidden: { opacity: 0 },
-//   visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+//   visible: { 
+//     opacity: 1, 
+//     transition: { staggerChildren: 0.1 } 
+//   },
 // };
 
-// const itemVariants = {
+// const itemVariants: Variants = {
 //   hidden: { opacity: 0, y: 20 },
-//   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+//   visible: { 
+//     opacity: 1, 
+//     y: 0, 
+//     transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } 
+//   },
 // };
 
 // export default function About() {
@@ -37,7 +49,7 @@
 //         viewport={{ once: true, margin: "-100px" }}
 //         className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10"
 //       >
-//         {/* Quote Section - NO CHANGES TO TEXT */}
+//         {/* Quote Section */}
 //         <motion.div variants={itemVariants} className="max-w-3xl mx-auto text-center mb-24">
 //           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-[11px] uppercase tracking-[0.3em] font-black mb-8 backdrop-blur-md">
 //             <Activity className="w-4 h-4 animate-pulse" /> Core Philosophy
@@ -94,7 +106,7 @@
 //                 <Link
 //                   href="/resume.pdf"
 //                   target="_blank"
-//                   className="flex items-center justify-center gap-3 w-full py-5 rounded-xl border border-white/20 bg-white/10 text-white font-black text-xs uppercase tracking-[0.2em] transition-all hover:bg-white/20 active:scale-95"
+//                   className="flex items-center justify-center gap-3 w-full py-5 rounded-xl border border-white/10 bg-white/10 text-white font-black text-xs uppercase tracking-[0.2em] transition-all hover:bg-white/20 active:scale-95"
 //                 >
 //                   Technical CV <ArrowUpRight className="w-5 h-5" />
 //                 </Link>
@@ -112,8 +124,8 @@
 //               </div>
 
 //               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-//                 <StackGroup title="Deep Learning" items={["PyTorch", "Transformers","NLP", "Computer Vision"]} />
-//                 <StackGroup title="MLOps Infrastructure" items={["MLflow", "Docker", "DVC", "AWS Sagemaker","GCP", "Kubernetes"]} />
+//                 <StackGroup title="Deep Learning" items={["PyTorch", "Transformers", "NLP", "Computer Vision"]} />
+//                 <StackGroup title="MLOps Infrastructure" items={["MLflow", "Docker", "DVC", "AWS Sagemaker", "GCP", "Kubernetes"]} />
 //               </div>
               
 //               <div className="mt-16 pt-12 border-t border-white/10">
@@ -145,11 +157,18 @@
 // }
 
 // /* Sub-components */
-// function StatBox({ icon, value, label }) {
+
+// // Fixed: Added proper React.ReactElement typing with size props to satisfy ESLint any-rules
+// interface IconProps {
+//   size?: number;
+//   className?: string;
+// }
+
+// function StatBox({ icon, value, label }: { icon: React.ReactElement<IconProps>; value: string; label: string }) {
 //   return (
 //     <div className="flex flex-col items-center justify-center p-5 rounded-2xl bg-white/10 border border-white/10 transition-all duration-300 hover:border-indigo-500/50 hover:bg-white/[0.15]">
 //       <div className="text-indigo-300 mb-3 group-hover:text-indigo-200 transition-colors">
-//         {React.cloneElement(icon as React.ReactElement, { size: 18 })}
+//         {React.cloneElement(icon, { size: 18 })}
 //       </div>
 //       <span className="text-2xl font-black text-white leading-none tracking-tighter">{value}</span>
 //       <span className="text-[8px] uppercase tracking-widest text-gray-300 font-black mt-3">{label}</span>
@@ -157,7 +176,7 @@
 //   );
 // }
 
-// function StackGroup({ title, items }) {
+// function StackGroup({ title, items }: { title: string; items: string[] }) {
 //   return (
 //     <div className="space-y-8">
 //       <h5 className="text-[10px] font-mono font-black uppercase tracking-[0.4em] text-indigo-300/80">{title}</h5>
@@ -175,11 +194,11 @@
 //   );
 // }
 
-// function Highlight({ icon, title, text }) {
+// function Highlight({ icon, title, text }: { icon: React.ReactElement<IconProps>; title: string; text: string }) {
 //   return (
 //     <div className="group relative p-10 rounded-3xl bg-white/[0.06] border border-white/20 overflow-hidden transition-all duration-500 hover:border-indigo-500/40 hover:translate-y-[-6px] shadow-xl">
 //       <div className="absolute -bottom-4 -right-4 p-4 opacity-[0.05] group-hover:opacity-15 transition-opacity duration-500">
-//         {React.cloneElement(icon as React.ReactElement, { size: 120 })}
+//         {React.cloneElement(icon, { size: 120 })}
 //       </div>
 //       <div className="mb-8 p-4 w-fit rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 shadow-inner">
 //         {icon}
@@ -189,15 +208,6 @@
 //     </div>
 //   );
 // }
-
-
-
-
-
-
-
-
-
 
 
 "use client";
@@ -280,18 +290,18 @@ export default function About() {
                   </div>
                   <div>
                     <h3 className="text-3xl font-black text-white tracking-tighter italic uppercase">ROHITH. J</h3>
-                    <p className="text-[11px] font-mono uppercase tracking-widest text-indigo-300 font-bold">Systems & Logic</p>
+                    <p className="text-[11px] font-mono uppercase tracking-widest text-indigo-300 font-bold">Software • ML • AI</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 mb-12">
-                  <StatBox icon={<CalendarClock />} value="2+" label="Years" />
-                  <StatBox icon={<FolderKanban />} value="20+" label="Deploy" />
-                  <StatBox icon={<Activity />} value="98%" label="SLA" />
+                  <StatBox icon={<CalendarClock />} value="3+" label="Years" />
+                  <StatBox icon={<FolderKanban />} value="3" label="ML Projects" />
+                  <StatBox icon={<Activity />} value="10+" label="APIs" />
                 </div>
 
                 <p className="text-gray-200 text-base leading-relaxed mb-12 font-medium">
-                  Specializing in the development of <span className="text-white font-bold underline underline-offset-4 decoration-indigo-500/50">high-availability ML systems</span> where research meets production-grade reliability and architectural integrity.
+                  Software engineer transitioning into <span className="text-white font-bold underline underline-offset-4 decoration-indigo-500/50">ML/AI engineering</span>, combining production full-stack experience with applied work in RAG, computer vision, and reproducible ML pipelines.
                 </p>
               </div>
 
@@ -301,14 +311,14 @@ export default function About() {
                   target="_blank"
                   className="flex items-center justify-center gap-3 w-full py-5 rounded-xl bg-white text-black font-black text-xs uppercase tracking-[0.2em] transition-all hover:scale-[1.03] active:scale-95 shadow-xl"
                 >
-                  Source Control <GitBranch className="w-5 h-5" />
+                  View GitHub <GitBranch className="w-5 h-5" />
                 </Link>
                 <Link
                   href="/resume.pdf"
                   target="_blank"
                   className="flex items-center justify-center gap-3 w-full py-5 rounded-xl border border-white/10 bg-white/10 text-white font-black text-xs uppercase tracking-[0.2em] transition-all hover:bg-white/20 active:scale-95"
                 >
-                  Technical CV <ArrowUpRight className="w-5 h-5" />
+                  View Resume <ArrowUpRight className="w-5 h-5" />
                 </Link>
               </div>
             </div>
@@ -324,15 +334,15 @@ export default function About() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <StackGroup title="Deep Learning" items={["PyTorch", "Transformers", "NLP", "Computer Vision"]} />
-                <StackGroup title="MLOps Infrastructure" items={["MLflow", "Docker", "DVC", "AWS Sagemaker", "GCP", "Kubernetes"]} />
+                <StackGroup title="ML & AI" items={["scikit-learn", "TensorFlow/Keras", "PyTorch", "Hugging Face", "RAG", "Computer Vision"]} />
+                <StackGroup title="Engineering & MLOps" items={["Python", "FastAPI", "DVC", "MLflow", "GitHub Actions", "Docker", "AWS"]} />
               </div>
               
               <div className="mt-16 pt-12 border-t border-white/10">
                 <p className="text-gray-100 leading-relaxed text-lg md:text-xl font-medium">
-                  I architect <span className="text-white font-bold italic">production-ready environments</span> for complex neural architectures. 
-                  By focusing on <span className="text-cyan-400 font-bold">computational efficiency</span> and 
-                  <span className="text-indigo-400 font-bold"> automated observability</span>, I transform experimental models into scalable, low-latency business solutions.
+                  I build <span className="text-white font-bold italic">end-to-end software and ML applications</span>, from data preparation and model evaluation to APIs, testing, and deployment. 
+                  My work combines <span className="text-cyan-400 font-bold">practical machine learning</span> with 
+                  <span className="text-indigo-400 font-bold"> production software engineering</span> to turn working prototypes into reliable applications.
                 </p>
               </div>
             </motion.div>
@@ -340,13 +350,13 @@ export default function About() {
             <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <Highlight
                 icon={<Brain className="w-7 h-7 text-cyan-400" />}
-                title="Advanced Neural networks"
-                text="Crafting custom CNNs and Transformers optimized for high-throughput environments."
+                title="Applied ML & AI"
+                text="Building RAG, NLP, and computer-vision projects with measurable evaluation and practical user workflows."
               />
               <Highlight
                 icon={<GitBranch className="w-7 h-7 text-indigo-400" />}
-                title="Model Orchestration"
-                text="Building robust CI/CD pipelines with automated drift detection and deployments."
+                title="Reproducible Delivery"
+                text="Creating tested ML pipelines with DVC, MLflow, GitHub Actions, FastAPI, and AWS-backed experiment artifacts."
               />
             </motion.div>
           </div>
