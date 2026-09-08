@@ -23,7 +23,7 @@ const Footer = () => {
           {/* Social Links - Glassmorphism intensified */}
           <div className="flex gap-5">
             <SocialLink href="https://github.com/RohithSriSharan" icon={<Github size={20} />} />
-            <SocialLink href="https://linkedin.com/in/rohith-sri-sharan-jangam" icon={<Linkedin size={20} />} />
+            <SocialLink href="https://www.linkedin.com/in/rohith-sri-sharan-jangam-95b58a15a/" icon={<Linkedin size={20} />} />
             <SocialLink href="mailto:contact@rohithj.dev" icon={<Mail size={20} />} />
           </div>
 
